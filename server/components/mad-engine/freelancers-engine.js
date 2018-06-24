@@ -6,7 +6,7 @@ var User = require('api/user/user.model');
 
 module.exports.search = function (project, cb) {
   if (_.isEmpty(project.skills)) {
-    return cb(new Error("No Skills defined for project"));
+    return cb(new Error("No Skills defined for Pet"));
   }
 
   User.find({
