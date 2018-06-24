@@ -21,9 +21,9 @@ describe('FreelancersEngine : Search', function () {
 
   before(function (done) {
     var usersAttrs = [
-      _.merge(Factory.attributes('freelancer-user'), {skills: ['java', 'c#', 'c++']}),
-      _.merge(Factory.attributes('freelancer-user'), {skills: ['javascript', 'ruby', 'c++']}),
-      _.merge(Factory.attributes('freelancer-user'), {skills: ['java', 'c#', 'c++', 'html']})
+      _.merge(Factory.attributes('freelancer-user'), {skills: ['Cat', 'Dog', 'Other']}),
+      _.merge(Factory.attributes('freelancer-user'), {skills: ['walking', 'lifting', 'training']}),
+      _.merge(Factory.attributes('freelancer-user'), {skills: ['feeding', 'pampering', 'treating', 'taming']})
     ];
 
     User.create(usersAttrs, function (err, results) {
@@ -49,8 +49,8 @@ describe('FreelancersEngine : Search', function () {
     });
   });
 
-  describe('project with skills', function () {
-    it('no matching freelancers', function (done) {
+  describe('Pets with skills', function () {
+    it('no matching Minderz', function (done) {
       project.skills = ['painting'];
       freelancersEngine.search(project, function (err, matchedUsers) {
         should.not.exist(err);
@@ -60,8 +60,8 @@ describe('FreelancersEngine : Search', function () {
       });
     });
 
-    it('1 skill : 2 matching freelancers', function (done) {
-      project.skills = ['java'];
+    it('1 skill : 2 matching Minderz', function (done) {
+      project.skills = ['Dog',];
       freelancersEngine.search(project, function (err, matchedUsers) {
         should.not.exist(err);
 
@@ -73,8 +73,8 @@ describe('FreelancersEngine : Search', function () {
       });
     });
 
-    it('2 skills : 3 matching freelancers', function (done) {
-      project.skills = ['java', 'ruby'];
+    it('2 skills : 3 matching Minderz', function (done) {
+      project.skills = ['training', 'feeding'];
       freelancersEngine.search(project, function (err, matchedUsers) {
         should.not.exist(err);
 
@@ -83,8 +83,8 @@ describe('FreelancersEngine : Search', function () {
       });
     });
 
-    it('1 skill : 3 matching freelancers with 2 liked previously', function (done) {
-      project.skills = ['c++'];
+    it('1 skill : 3 matching Minderz with 2 liked previously', function (done) {
+      project.skills = ['walking'];
       project.okFreelancers = [freelancers[0]._id];
       project.nokFreelancers = [freelancers[2]._id];
       freelancersEngine.search(project, function (err, matchedUsers) {
