@@ -5,7 +5,7 @@ var Project = require('api/project/project.model');
 
 module.exports.search = function (freelancer, cb) {
   if (_.isEmpty(freelancer.skills)) {
-    return cb(new Error("No Skills defined for freelancer"));
+    return cb(new Error("No Skills defined for Minderz"));
   }
 
   Project.find({
