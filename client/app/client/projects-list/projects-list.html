@@ -1,7 +1,7 @@
 <div class="row" id="projects-list-header">
   <div class="col-xs-12">
-    <h2>My Projects
-      <a href ui-sref="client.create-project" class="btn btn-primary btn-lg pull-right">Create Project</a>
+    <h2>My Pets
+      <a href ui-sref="client.create-project" class="btn btn-primary btn-lg pull-right">Upload a Pet</a>
     </h2>
   </div>
 </div>
@@ -24,7 +24,7 @@
       </div>
       <div class="panel-body">
         <p>
-          <b>Description:</b> {{project.description | words: 50 }}
+          <b>Pet Description:</b> {{project.description | words: 50 }}
         </p>
 
         <p ng-show="project.skills.length > 0">
