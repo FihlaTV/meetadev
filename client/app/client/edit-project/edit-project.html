@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-xs-12">
-    <a ui-sref="client.projects-list" class="btn btn-success">Back to Projects List</a>
+    <a ui-sref="client.projects-list" class="btn btn-success">Back to My Pets List</a>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
     <div class="panel panel-default">
-      <div class="panel-heading"><h2>{{editAction == 'CREATE' ? 'Create' : 'Edit'}} Project</h2></div>
+      <div class="panel-heading"><h2>{{editAction == 'CREATE' ? 'Create' : 'Edit'}} Pets</h2></div>
       <div class="panel-body">
         <form class="form" name="editProjectForm" ng-submit="updateProject(project)" novalidate>
 
@@ -16,7 +16,7 @@
                                             'has-error': editProjectForm.title.$invalid && submitted }">
               <label>Title</label>
               <input type="text" name="title" class="form-control" ng-model="project.title"
-                     placeholder="Node.js App with Bootstrap"
+                     placeholder=" Pet Sitting or Boarding"
                      required/>
 
               <p class="help-block" ng-show="editProjectForm.title.$error.required && submitted">
@@ -30,11 +30,11 @@
                                             'has-error': editProjectForm.description.$invalid && submitted }">
               <label>Description</label>
               <textarea name="description" class="form-control" ng-model="project.description" rows="4"
-                        placeholder="We're looking for a developer to help us build a Node.js App with ..."
+                        placeholder="We're looking for a Minder to watch over our Dog Gipsy..."
                         ng-minlength="50"
                         required> </textarea>
               <p class="help-block" ng-show="editProjectForm.description.$error.required && submitted">
-                Please add a project description
+                Please Describe your Pet's info in full
               </p>
 
               <p class="help-block" ng-show="editProjectForm.description.$error.minlength && submitted">
